@@ -39,6 +39,11 @@
       "id": "e728",
       "name": "calça",
       "price": "300"
+    },
+    {
+      "id": "903d",
+      "name": "teste2",
+      "price": "12"
     }
   ]
 }
