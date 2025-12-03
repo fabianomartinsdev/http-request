@@ -28,6 +28,8 @@ export const useFetch = (url) => {
 
         const json = await res.json();
 
+        console.log(json);
+
         setCallFetch(json);
       }
     };
@@ -35,14 +37,14 @@ export const useFetch = (url) => {
     httpRequest();
   }, [config, method, url]);
 
-  const httpConfig = (data, method) => {
+  const httpConfig = (product, method) => {
     if (method === "POST") {
       setConfig({
-        method,
+        method: "POST", //could use just "method, because POST is sent from app.jsx httpConfig function "
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(product),
       });
 
       setMethod(method);

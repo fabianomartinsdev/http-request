@@ -13,7 +13,7 @@ function App() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
 
-  // 2 - add de produtos
+  // 2 - add produtos
   const handleSubmit = async (e) => {
     e.preventDefault();
 
