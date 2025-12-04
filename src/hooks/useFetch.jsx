@@ -7,13 +7,18 @@ export const useFetch = (url) => {
   const [method, setMethod] = useState(null);
   const [callFetch, setCallFetch] = useState(null);
 
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
+
       const res = await fetch(url);
 
       const data = await res.json();
 
       setData(data);
+      setLoading(false);
     };
 
     fetchData();
@@ -51,5 +56,5 @@ export const useFetch = (url) => {
     }
   };
 
-  return { data, httpConfig };
+  return { data, httpConfig, loading };
 };
