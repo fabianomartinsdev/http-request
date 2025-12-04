@@ -28,10 +28,8 @@ function App() {
     setPrice("");
   };
 
-  const handleDelete = (e) => {
-    const itemId = e.target.id;
-
-    httpConfig(null, "DELETE", itemId);
+  const handleDelete = (id) => {
+    httpConfig(id, "DELETE");
   };
 
   return (
@@ -48,9 +46,7 @@ function App() {
               <div key={product.id}>
                 <li>
                   {product.name} - R$: {product.price}{" "}
-                  <button id={product.id} onClick={handleDelete}>
-                    X
-                  </button>
+                  <button onClick={() => handleDelete(product.id)}>X</button>
                 </li>
               </div>
             );
