@@ -8,7 +8,7 @@ const url = "http://localhost:3000/products";
 
 function App() {
   // 1 - resgate de dados
-  const { data: items, httpConfig, loading } = useFetch(url);
+  const { data: items, httpConfig, loading, error } = useFetch(url);
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -28,19 +28,29 @@ function App() {
     setPrice("");
   };
 
+  const handleDelete = (e) => {
+    const itemId = e.target.id;
+
+    httpConfig(null, "DELETE", itemId);
+  };
+
   return (
     <>
       <h1>Lista de Produtos</h1>
 
       <ul>
         {loading && <p>...</p>}
+        {error && <p>{error}</p>}
         {items &&
-          !loading &&
+          !error &&
           items.map((product) => {
             return (
               <div key={product.id}>
                 <li>
-                  {product.name} - R$: {product.price}
+                  {product.name} - R$: {product.price}{" "}
+                  <button id={product.id} onClick={handleDelete}>
+                    X
+                  </button>
                 </li>
               </div>
             );
@@ -66,7 +76,8 @@ function App() {
               onChange={(e) => setPrice(e.target.value)}
             />
           </label>
-          <input type="submit" value="Criar" />
+          {loading && <input type="submit" value="Aguarde" disabled />}
+          {!loading && <input type="submit" value="Criar" />}
         </form>
       </div>
     </>

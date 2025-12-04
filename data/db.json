@@ -1,74 +1,14 @@
 {
   "products": [
     {
-      "id": "1",
-      "name": "Laptop",
-      "price": 999.99
-    },
-    {
-      "id": "2",
-      "name": "Smartphone",
-      "price": 699.99
-    },
-    {
-      "id": "3",
-      "name": "Headphones",
-      "price": 199.99
-    },
-    {
-      "id": "4",
-      "name": "T-Shirt",
-      "price": 29.9
-    },
-    {
       "id": "5",
       "name": "Red Skirt",
       "price": 19.9
     },
     {
-      "id": "10d3",
-      "name": "Teste",
-      "price": "120"
-    },
-    {
-      "id": "a128",
-      "name": "escada",
-      "price": "500"
-    },
-    {
-      "id": "e728",
-      "name": "calça",
-      "price": "300"
-    },
-    {
-      "id": "903d",
-      "name": "teste2",
-      "price": "12"
-    },
-    {
-      "id": "1c37",
+      "id": "dad2",
       "name": "teste",
-      "price": "21"
-    },
-    {
-      "id": "2772",
-      "name": "321",
       "price": "32"
-    },
-    {
-      "id": "d948",
-      "name": "21",
-      "price": "1"
-    },
-    {
-      "id": "6644",
-      "name": "skate",
-      "price": "2002"
-    },
-    {
-      "id": "db39",
-      "name": "teste",
-      "price": "21312"
     }
   ]
 }
